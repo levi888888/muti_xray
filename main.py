@@ -48,17 +48,14 @@ def config_init(args):
         print(f"{Warning} {Red}作者还没写这个模式 {top_mode} 请联系作者 {Green} {author_email} {Font}")
         exit(2)
 
-    user = '147258'
-    passwd = '147258'
-    port = 10000
 
     for ip in net_card:
         print(f"{Info} 正在处理 {ip} {Font}")
         tag = xray.gen_tag(ipaddr=ip)
         # 端口等熵变大
-        # port = random.randint(30000, 50000)
-        # user = ''.join(random.sample(string.ascii_letters + string.digits, 16))
-        # passwd = ''.join(random.sample(string.ascii_letters + string.digits, 16))
+        port = random.randint(30000, 50000)
+        user = ''.join(random.sample(string.ascii_letters + string.digits, 16))
+        passwd = ''.join(random.sample(string.ascii_letters + string.digits, 16))
 
         port += 1
         xray.insert_routing_config(tag[0], tag[1])
